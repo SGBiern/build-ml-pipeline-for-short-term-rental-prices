@@ -8,7 +8,7 @@ import hydra
 from omegaconf import DictConfig
 
 _steps = [
-    "download",
+    #"download",
     "basic_cleaning",
     "data_check",
     "data_split",
@@ -38,6 +38,7 @@ def go(config: DictConfig):
         if "download" in active_steps:
             # Download file and load in W&B
             _ = mlflow.run(
+                #f"{config['main']['components_repository']}/get_data",
                 os.path.join(hydra.utils.get_original_cwd(), 'components', 'get_data'),
                 "main",
                 parameters={
