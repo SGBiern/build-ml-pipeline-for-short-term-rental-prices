@@ -5,6 +5,7 @@ entry_points:
   main:
     parameters:
 
+<<<<<<< HEAD
       input_artifact:
         description: Raw data
         type: string
@@ -32,3 +33,20 @@ entry_points:
 
     command: >-
         python run.py  --input_artifact {input_artifact}  --output_artifact {output_artifact}  --output_type {output_type}  --output_description {output_description}  --min_price {min_price}  --max_price {max_price} 
+=======
+      parameter1:
+        description: ## ADD DESCRIPTION
+        type: string
+
+      parameter2:
+        description: ## ADD DESCRIPTION
+        type: string
+
+      parameter3:
+        description: ## ADD DESCRIPTION
+        type: string
+
+
+    command: >-
+        python run.py  --parameter1 {parameter1}  --parameter2 {parameter2}  --parameter3 {parameter3} 
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd

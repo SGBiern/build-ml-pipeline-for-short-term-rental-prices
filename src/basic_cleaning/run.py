@@ -1,12 +1,19 @@
 #!/usr/bin/env python
 """
+<<<<<<< HEAD
 Download from W&B the raw dataset and apply some basic data cleaning, exporting the result to a new artifact
+=======
+Performs the cleaning of the data and save it in the wandb.
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd
 """
 import argparse
 import logging
 import wandb
+<<<<<<< HEAD
 import pandas as pd
 import os
+=======
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd
 
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)-15s %(message)s")
@@ -17,6 +24,7 @@ def go(args):
 
     run = wandb.init(job_type="basic_cleaning")
     run.config.update(args)
+<<<<<<< HEAD
     
     logger.info('Downloading/Reading artifact')
     artifact_path = run.use_artifact(args.input_artifact).file()
@@ -82,20 +90,53 @@ if __name__ == "__main__":
         "--output_description", 
         type=str,
         help='Description for the artifact',
+=======
+
+    # Download input artifact. This will also log that this script is using this
+    # particular version of the artifact
+    # artifact_local_path = run.use_artifact(args.input_artifact).file()
+
+    ######################
+    # YOUR CODE HERE     #
+    ######################
+
+
+if __name__ == "__main__":
+
+    parser = argparse.ArgumentParser(description="This cleans the data.")
+
+
+    parser.add_argument(
+        "--parameter1", 
+        type=## INSERT TYPE HERE: str, float or int,
+        help=## INSERT DESCRIPTION HERE,
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd
         required=True
     )
 
     parser.add_argument(
+<<<<<<< HEAD
         "--min_price", 
         type=float,
         help="Minimum price for cleaning outliers",
+=======
+        "--parameter2", 
+        type=## INSERT TYPE HERE: str, float or int,
+        help=## INSERT DESCRIPTION HERE,
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd
         required=True
     )
 
     parser.add_argument(
+<<<<<<< HEAD
         "--max_price", 
         type=float,
         help="Maximum price for cleaning outliers",
+=======
+        "--parameter3", 
+        type=## INSERT TYPE HERE: str, float or int,
+        help=## INSERT DESCRIPTION HERE,
+>>>>>>> 890a5e60a4f272fe070836685b2d63a04a62f2fd
         required=True
     )
 
