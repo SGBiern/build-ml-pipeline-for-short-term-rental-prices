@@ -10,4 +10,4 @@ dependencies:
   - pip:
       - protobuf==3.20.1
       - wandb==0.10.31
-      - git+https://github.com/SGBiern/build-ml-pipeline-for-short-term-rental-prices.git#egg=wandb-utils&subdirectory=components
+      #- git+https://github.com/SGBiern/build-ml-pipeline-for-short-term-rental-prices.git#egg=wandb-utils&subdirectory=components
