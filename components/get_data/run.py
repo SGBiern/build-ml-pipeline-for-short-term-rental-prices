@@ -21,13 +21,13 @@ def go(args):
 
     logger.info(f"Returning sample {args.sample}")
     logger.info(f"Uploading {args.artifact_name} to Weights & Biases")
-    
-    artifact = wandb.Artifact(args.artifact_name, type='dataset')
-    artifact.type(args.artifact_type)
-    artifact.description(args.artifact_description)
-    artifact.add_file(os.path.join("data", args.sample))
-    
-    run.log_artifact(artifact)
+    log_artifact(
+        args.artifact_name,
+        args.artifact_type,
+        args.artifact_description,
+        os.path.join("data", args.sample),
+        run,
+    )
 
 
 if __name__ == "__main__":
